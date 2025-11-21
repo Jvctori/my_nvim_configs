@@ -49,15 +49,12 @@ vim.opt.expandtab = false   -- Go usa tabs reais
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
+-- Default global (opcional)
+vim.opt.expandtab = false   -- Go usa tabs reais
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
 
--- Indentação específica para Go
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "go" },
-  callback = function()
-    vim.opt_local.expandtab = false   -- Tab reais, não espaços
-    vim.opt_local.tabstop = 4
-    vim.opt_local.shiftwidth = 4
-    vim.opt_local.softtabstop = 4
 -- Mover linha ou bloco selecionado no modo visual
 vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
